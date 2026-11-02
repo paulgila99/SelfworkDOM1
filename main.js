@@ -1,32 +1,26 @@
 let paragrafi = document.querySelectorAll('p')
-let btnColor = document.querySelectorAll('#btnColor')
-let btnBold = document.querySelectorAll('#btnBold')
-let btnHide = document.querySelectorAll('#btnHide')
+let btnColor = document.querySelector('#btnColor')
+let btnBold = document.querySelector('#btnBold')
+let btnHide = document.querySelector('#btnHide')
 
-btnColor.forEach(btn => {
-    btn.addEventListener('click', () => {
-        paragrafi.forEach(paragrafi => {
-            let r = Math.floor(Math.random() * 256)
-            let g = Math.floor(Math.random() * 256)
-            let b = Math.floor(Math.random() * 256)
+btnColor.addEventListener('click', () => {
+    paragrafi.forEach(paragrafo => {
+        let r = Math.floor(Math.random() * 256)
+        let g = Math.floor(Math.random() * 256)
+        let b = Math.floor(Math.random() * 256)
 
-        paragrafi.style.color = `rgb(${r}, ${g}, ${b})`
-    });
+        paragrafo.style.color = `rgb(${r}, ${g}, ${b})`
     })
 })
 
-btnBold.forEach(btn => {
-    btn.addEventListener('click', () => {
-        paragrafi.forEach(paragrafi => {
-            paragrafi.style.fontWeight = paragrafi.style.fontWeight === 'bold' ? 'normal' : 'bold'
-        });
-    });
-});
+btnBold.addEventListener('click', () => {
+    paragrafi.forEach(paragrafo => {
+        paragrafo.style.fontWeight = paragrafo.style.fontWeight === 'bold' ? 'normal' : 'bold'
+    })
+})
 
-btnHide.forEach(btn => {
-    btn.addEventListener('click', () => {
-        paragrafi.forEach(paragrafi => {
-            paragrafi.style.display = paragrafi.style.display === 'none' ? 'block' : 'none'
-        });
-    });
-});
+btnHide.addEventListener('click', () => {
+    paragrafi.forEach(paragrafo => {
+        paragrafo.style.display = paragrafo.style.display === 'none' ? 'block' : 'none'
+    })
+})
